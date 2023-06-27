@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Lift Simulation</title>
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="grid-center">
+                <h1 class="center">Lift simulation</h1>
+                <form id="elevator-form" class="center elevator-form">
+                    <div class="input-group">
+                        <label for="floor-input">No. of floors</label>
+                        <input required type="number" id="floor-input" />
+                    </div>
+                    <div class="input-group">
+                        <label for="elevator-input">No. of lifts</label>
+                        <input required type="number" id="elevator-input" />
+                    </div>
+                    <button type="submit" class="btn" id="submit-btn">
+                        Submit
+                    </button>
+                </form>
+                <div class="elevator-container hidden">
+                    <div class="floor-container" data-floor="0">
+                        <div class="floor">
+                            <div class="floor-buttons">
+                                <button
+                                    class="btn up-btn"
+                                    data-button-floor="0"
+                                >
+                                    Up
+                                </button>
+                            </div>
+                            <div class="floor-elevator-container">
+                                <!-- <div class="elevator" data-current-floor="0">
+                                    <div class="elevator-left"></div>
+                                    <div class="elevator-right"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./js/main.js"></script>
+    </body>
+</html>
