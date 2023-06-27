@@ -42,15 +42,17 @@ const addFloor = (index) => {
         const secondFloorContainer = document.querySelector(
             `.floor-container:nth-child(2)`
         );
-        const floorButtons =
-            secondFloorContainer.querySelector(".floor-buttons");
-        floorButtons.innerHTML = `
+        if (!(parseInt(secondFloorContainer.dataset.floor) === 0)) {
+            const floorButtons =
+                secondFloorContainer.querySelector(".floor-buttons");
+            floorButtons.innerHTML = `
             <button class="btn up-btn" data-button-floor=${
                 index - 1
             }>Up</button>
             <button class="btn down-btn" data-button-floor=${
                 index - 1
             }>Down</button>`;
+        }
     }
 
     const floorContainer = document.querySelectorAll(".floor-container");
@@ -140,7 +142,7 @@ form.addEventListener("submit", (event) => {
     for (let i = 0; i < elevators; i++) {
         addElevator();
     }
-    for (let i = 1; i <= floors; i++) {
+    for (let i = 1; i < floors; i++) {
         addFloor(i);
     }
 });
